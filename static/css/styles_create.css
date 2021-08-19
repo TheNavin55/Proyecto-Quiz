@@ -1,0 +1,97 @@
+/*todo*/
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+main{
+	
+}
+/*class*/
+
+.head{
+	align-items: center;
+	background-color: gray;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+.head_item{
+	padding: 5px;
+	display: inline-block;
+}
+.nav_button{
+	padding: 5px;
+	display: inline-block;
+}
+.main_subtitle{
+	background-color: aquamarine;
+	text-align-last: center;
+	
+}
+.main_caja{
+	background-color: aqua;
+	background: url("../IMG/chaco.png") no-repeat center ;
+	background-size: contain;
+	align-items: flex-start;
+	display: inline-flex;
+  	justify-content: space-between;
+	
+}
+.main_caja--registro{
+	margin: 0px 10px;
+	padding: 20px 30px;
+	background-color: blue;
+	border-radius: 15px;
+}
+footer{
+	background-color: chartreuse;
+	text-align: center;
+}
+body {
+    background-color: #eee
+}
+
+label.radio {
+    cursor: pointer
+}
+
+label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+}
+
+label.radio span {
+    padding: 4px 0px;
+    border: 1px solid red;
+    display: inline-block;
+    color: red;
+    width: 100px;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 7px;
+    text-transform: uppercase
+}
+
+label.radio input:checked+span {
+    border-color: red;
+    background-color: red;
+    color: #fff
+}
+
+.ans {
+    margin-left: 36px !important
+}
+
+.btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important
+}
+
+.btn:active {
+    outline: 0 !important;
+    box-shadow: none !important
+}
