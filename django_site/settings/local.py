@@ -8,9 +8,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_site',
         'USER': 'root',
-        'PASSWORD':'Alexix31',
+        'PASSWORD':'nicoRoot123',
         'HOST':'localhost',
-        'PORT':'3306',
+        'PORT':'33060',
         
     }
 }
