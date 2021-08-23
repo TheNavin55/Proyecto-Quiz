@@ -1,4 +1,3 @@
 *.pyc  *~  
 __pycache__  
 django_site/settings/base.py
-django_site/settings/local.py
