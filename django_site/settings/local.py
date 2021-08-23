@@ -7,10 +7,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_site',
-        'USER': 'root',
-        'PASSWORD':'nicoRoot123',
+        'USER': '',
+        'PASSWORD':'',
         'HOST':'localhost',
-        'PORT':'33060',
-        
+        'PORT':'3306',
+    
     }
 }
