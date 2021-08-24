@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def juego(request):
+def jugar(request):
     return render(request, 'juego.html',{})
 
 def login(request):
