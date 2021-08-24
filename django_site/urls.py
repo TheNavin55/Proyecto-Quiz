@@ -20,7 +20,7 @@ from apps.blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login, name="login"),
-    path('juego/', views.plantilla, name="juego"),
+    path('juego/', views.juego, name="juego"),
     path('create/', views.create, name="create"),
     path('blog/', include('apps.blog.urls')),
 ]

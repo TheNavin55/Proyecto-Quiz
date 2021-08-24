@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def plantilla(request):
-    return render(request, 'plantilla.html',texto)
+def juego(request):
+    return render(request, 'juego.html',{})
 
 def login(request):
     return render(request, 'login.html',{})
