@@ -1,4 +1,3 @@
-@ -0,0 +1,30 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from django.db.models.fields import CharField, DateField, EmailField, IntegerField, TextField, TimeField
