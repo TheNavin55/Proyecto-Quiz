@@ -4,13 +4,24 @@
 
 <head>
     <title>C H A C O - 70 AÑOS</title>
-    <link rel="shortcut icon" href="IMG/chaco.png">
+    <link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles_juego.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_jugar.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+<header>
+    <center>
+    <ul>
+        <a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
+        <a href="{% url 'jugar' %}">Jugar</a>
+        <a href="{% url 'nosotros' %}">Nosotros</a>
+        <a href="{% url 'login' %}">Cerrar sesión</a>
+    </ul>
+    </center>
+</header>
 
 <body>
     <div class="container-fluid">
@@ -22,9 +33,9 @@
                 <div class="modal-body">
                     <div class="col-xs-3 5"> </div>
                     <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> 1510 </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"> 1872 </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3">1990 </label>
+                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="1"> 1510 </label>
+                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="2"> 1872 </label>
+                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="3">1990 </label>
 
                     </div>
                 </div>
@@ -40,9 +51,9 @@
                 <div class="modal-body">
                     <div class="col-xs-3 5"> </div>
                     <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> Subtopical </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"> Templado </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"> Ecuatorial </label>
+                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="1"> Subtopical </label>
+                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="2"> Templado </label>
+                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="3"> Ecuatorial </label>
 
                     </div>
                 </div>
@@ -58,9 +69,9 @@
                 <div class="modal-body">
                     <div class="col-xs-3 5"> </div>
                     <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> Almendro - Caña de Azúcar - Higuera </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"> Quebracho - Algarrobo - Palo Borracho </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"> Cedro - Caoba - Guayabo </label>
+                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="1"> Almendro - Caña de Azúcar - Higuera </label>
+                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="2"> Quebracho - Algarrobo - Palo Borracho </label>
+                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="3"> Cedro - Caoba - Guayabo </label>
 
                     </div>
                 </div>
@@ -76,9 +87,9 @@
                 <div class="modal-body">
                     <div class="col-xs-3 5"> </div>
                     <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1"> A 100km de Resistencia </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="2"> A 12 km de Gancedo </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="3"> A 20 km de Sáenz Peña </label>
+                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="1"> A 100km de Resistencia </label>
+                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="2"> A 12 km de Gancedo </label>
+                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="3"> A 20 km de Sáenz Peña </label>
 
                     </div>
                 </div>
