@@ -10,10 +10,14 @@ class Participante(models.Model):
 
 class Pregunta(models.Model):
     descripcion = TextField("Texto que representa la pregunta propiamente dicha")
+    categoria = CharField("Categoria a la que pertenece la pregunta", max_length = 25)
     respuestaCorrecta = TextField("Respuesta correcta a la pregunta")
     incorrecta1 = TextField("Una respuesta incorrecta a la pregunta")
     incorrecta2 = TextField("Una respuesta incorrecta a la pregunta")
     incorrecta3 = TextField("Una respuesta incorrecta a la pregunta")
+
+    def __str__(self) -> str:
+        return self.descripcion
 
 class Juego(models.Model):
     fecha = DateField("Fecha en la que se creo el juego", auto_now_add = True)
