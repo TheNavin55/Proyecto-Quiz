@@ -11,18 +11,20 @@ html,
 body {
     height: 100%
 }
+.btn{
+    background-color:Black;
+}
 
 body {
     display: grid;
     place-items: center;
     background: #eee
 }
-
 .card {
     border-radius: 20px;
     background: #eeeeee;
     box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #C1CFC0;
-    border: none
+    border: none;
 }
 
 .card img {

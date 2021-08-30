@@ -13,3 +13,6 @@ def create(request):
 
 def nosotros(request):
     return render(request, 'nosotros.html',{})
+
+def menu(request):
+    return render(request, 'menu.html',{})

@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.login, name="login"),
     path('jugar/', views.jugar, name="jugar"),
     path('create/', views.create, name="create"),
+    path('menu/', views.menu, name="menu"),
     path('blog/', include('apps.blog.urls')),
-    path('nosotros/', views.nosotros, name="nosotros")
+    path('nosotros/', views.nosotros, name="nosotros"),
 ]

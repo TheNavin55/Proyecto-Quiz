@@ -4,26 +4,37 @@
 
 <head>
     <title>C H A C O - 70 AÑOS</title>
-    <link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/styles_jugar.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_jugar.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <header>
     <center>
-    <ul>
-        <a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
-        <a href="{% url 'jugar' %}">Jugar</a>
-        <a href="{% url 'nosotros' %}">Nosotros</a>
-        <a href="{% url 'login' %}">Cerrar sesión</a>
-    </ul>
+        <ul>
+            <section style="padding-top:10px">
+                <a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
+            </section>
+            <div style="padding-left: 10px;display:inline-block">
+                <a href="{% url 'menu' %}">Menu</a>
+            </div>
+            <div style="padding-left: 10px;display:inline-block">
+                <a href="{% url 'jugar' %}">Jugar</a>
+            </div>
+            <div style="padding-left: 10px;display:inline-block">
+                <a href="{% url 'nosotros' %}">Nosotros</a>
+            </div>
+            <div style="padding-left: 10px;display:inline-block">
+                <a href="{% url 'login' %}">Cerrar sesión</a>
+            </div>
+        </ul>
     </center>
 </header>
 
-<body>
+<body style="background-color:#C1CFC0">
     <div class="container-fluid">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -101,6 +112,7 @@
 
 </body>
 
+<center><button style="background-color:white;font-family: cursive; border-radius:10px;padding:10px;margin-bottom: 2vh;">Terminar</button></center>
 
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

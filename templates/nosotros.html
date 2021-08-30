@@ -5,19 +5,30 @@
 	<meta charset="utf-8">
 	<title>Documento sin título</title>
 	<link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
-	<link rel="stylesheet" href="{% static 'css/styles_nosotros.css' %}">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/styles_nosotros.css' %}">
 	</head>
 
 	<header>
 		<center>
-		<ul>
-			<a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
-			<a href="{% url 'jugar' %}">Jugar</a>
-			<a href="{% url 'nosotros' %}">Nosotros</a>
-			<a href="{% url 'login' %}">Cerrar sesión</a>
-		</ul>
+			<ul>
+				<section style="padding-top:10px">
+					<a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
+				</section>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'menu' %}">Menu</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'jugar' %}">Jugar</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'nosotros' %}">Nosotros</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'login' %}">Cerrar sesión</a>
+				</div>
+			</ul>
 		</center>
 	</header>
 
