@@ -4,7 +4,6 @@
     box-sizing: border-box;
     background-color:#C1CFC0;
 }
-
 h1{
     font-size:3.5rem;
     padding-bottom:10vh;
@@ -39,36 +38,49 @@ section{
 }
 @media (min-width:10px) {
     .box{
-        margin: 0vw;
+        margin:2vw 0vw;
     }
 }
 @media (min-width:320px) {
     .box{
-        margin: 2vw;
+        margin:2vw 2vw;
+    }
+}
+@media (min-width:375px) {
+    .box{
+        margin:2vw 2vw;
     }
 }
 @media (min-width:411px) {
     .box{
-        margin: 9vw;
+        margin:10vw 9vw;
     }
 }
 @media (min-width:768px) {
-    .box{
-        margin: 25vw;
-    }
-}
-@media (min-width:1024px) {
     *{
-        font-size: 115%;
+        font-size: 106%;
     }
     h2{
         font-size: 115%;
     }
     .box{
-        margin: 20vw;
+        margin:10vw 20vw;
+    }
+    a{
+        font-size: 110%;
+    }
+}
+@media (min-width:1024px) {
+    *{
+        font-size: 103%;
+    }
+    h2{
+        font-size: 115%;
+    }
+    .box{
+        margin:10vw 20vw;
     }
     a{
         font-size: 100%;
     }
-
 }
