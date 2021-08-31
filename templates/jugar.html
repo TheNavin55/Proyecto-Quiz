@@ -35,81 +35,26 @@
 </header>
 
 <body style="background-color:#C1CFC0">
+    {% for pregunta in preguntas %}
     <div class="container-fluid">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3>¿En qué año se crea el Territorio Nacional del Chaco?</h3>
+                    <h3>{{pregunta.descripcion}}</h3>
                 </div>
                 <div class="modal-body">
                     <div class="col-xs-3 5"> </div>
                     <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="1"> 1510 </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="2"> 1872 </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="3">1990 </label>
-
+                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="1"> {{pregunta.respuestaCorrecta}} </label>
+                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="2"> {{pregunta.incorrecta1}} </label>
+                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="3"> {{pregunta.incorrecta2}} </label>
+                        <label class="element-animation4 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer1" value="4"> {{pregunta.incorrecta3}} </label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>El clima que posee la provincia es:</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="col-xs-3 5"> </div>
-                    <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="1"> Subtopical </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="2"> Templado </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer2" value="3"> Ecuatorial </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>¿Cuáles de estas ternas pertenecen a la flora autóctona del Chaco?</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="col-xs-3 5"> </div>
-                    <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="1"> Almendro - Caña de Azúcar - Higuera </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="2"> Quebracho - Algarrobo - Palo Borracho </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer3" value="3"> Cedro - Caoba - Guayabo </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3> ¿Dónde se encuentra ubicado el parque científico y educativo llamado “CAMPO DEL CIELO"? </h3>
-                </div>
-                <div class="modal-body">
-                    <div class="col-xs-3 5"> </div>
-                    <div class="quiz" id="quiz" data-toggle="buttons">
-                        <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="1"> A 100km de Resistencia </label>
-                        <label class="element-animation2 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="2"> A 12 km de Gancedo </label>
-                        <label class="element-animation3 btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer4" value="3"> A 20 km de Sáenz Peña </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    {% endfor %}
 </body>
 
 <center><button style="background-color:white;font-family: cursive; border-radius:10px;padding:10px;margin-bottom: 2vh;">Terminar</button></center>
