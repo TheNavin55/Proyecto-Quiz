@@ -16,3 +16,6 @@ def nosotros(request):
 
 def menu(request):
     return render(request, 'menu.html',{})
+
+def resultados(request):
+    return render(request, 'resultados.html',{})

@@ -25,6 +25,7 @@ urlpatterns = [
     path('jugar/', views.jugar, name="jugar"),
     path('create/', views.create, name="create"),
     path('menu/', views.menu, name="menu"),
+    path('resultados/', views.resultados, name="resultados"),
     path('blog/', include('apps.blog.urls')),
     path('nosotros/', views.nosotros, name="nosotros"),
 ]
