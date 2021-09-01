@@ -22,12 +22,13 @@ class Pregunta(models.Model):
 class Juego(models.Model):
     fecha = DateField("Fecha en la que se creo el juego", auto_now_add = True)
     hora = TimeField("Hora en la que se creo el juego", auto_now_add = True)
-    puntaje = IntegerField("Puntaje obtenido por el jugador")
+    puntaje = IntegerField("Puntaje obtenido por el jugador", default = 0)
 
 class Juega(models.Model):
     idParticipante = models.ForeignKey(Participante, on_delete = models.CASCADE)
     idJuego = models.ForeignKey(Juego, on_delete = models.CASCADE)
     idPregunta = models.ForeignKey(Pregunta, on_delete = DO_NOTHING)
+    correcto = models.BooleanField(default = False)
 
     class Meta:
-        unique_together = (("idParticipante", "idJuego"),)
+        unique_together = (("idParticipante", "idJuego", "idPregunta"),)
