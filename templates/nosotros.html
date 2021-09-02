@@ -1,0 +1,95 @@
+<!doctype html>
+{% load static%}
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Documento sin título</title>
+	<link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/styles_nosotros.css' %}">
+	</head>
+
+	<header>
+		<center>
+			<ul>
+				<section style="padding-top:10px">
+					<a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
+				</section>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'menu' %}">Menu</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'jugar' %}">Jugar</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'nosotros' %}">Nosotros</a>
+				</div>
+				<div style="padding-left: 10px;display:inline-block">
+					<a href="{% url 'login' %}">Cerrar sesión</a>
+				</div>
+			</ul>
+		</center>
+	</header>
+
+	<body>
+		<div class="container d-flex justify-content-center">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5 mb-5">
+					<div class="text-center"> <img src="{% static 'img/perfil.png' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Nicolás Dajruch</h3> <span class="mt-1 clearfix">Android Developer</span> <small class="mt-4">I am an android developer working at google Inc at california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5">
+					<div class="text-center"> <img src="{% static 'img/perfil.png' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Cristian Exequiel Gomez</h3> <span class="mt-1 clearfix">Graphics Designer</span> <small class="mt-4">I am an Graphics Designer working at google Inc at california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5">
+					<div class="text-center"> <img src="{% static 'img/alexis_medina.jpg' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Alexis Npavlik</h3> <span class="mt-1 clearfix">Java Architect</span> <small class="mt-4">I am an Java Architect working at google Inc at california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="container d-flex justify-content-center">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5 mb-5">
+					<div class="text-center"> <img src="{% static 'img/perfil.png' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Emanuela Rios</h3> <span class="mt-1 clearfix">Android Developer</span> <small class="mt-4">I am an android developer working at google Inc at california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5">
+					<div class="text-center"> <img src="{% static 'img/brian1.jpg' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Brian Alexis Schulz</h3> <span class="mt-1 clearfix">Full Stack Developer</span> <small class="mt-4">Soy desarrollador full stack, trabajo en SpaceX Inc en california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card p-3 py-4 mt-5">
+					<div class="text-center"> <img src="{% static 'img/perfil.png' %}" width="100" class="rounded-circle">
+						<h3 class="mt-2">Ethel Vecchietti</h3> <span class="mt-1 clearfix">Java Architect</span> <small class="mt-4">I am an Java Architect working at google Inc at california,USA</small>
+						<div class="social-buttons mt-5"> <button class="neo-button"><i class="fa fa-facebook fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-linkedin fa-1x"></i></button> <button class="neo-button"><i class="fa fa-google fa-1x"></i> </button> <button class="neo-button"><i class="fa fa-youtube fa-1x"></i> </button> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</body>
+	</html>
