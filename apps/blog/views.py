@@ -22,10 +22,11 @@ def jugar(request):
             respuesta = {}
             respuesta['texto'] = valor[1]
             if valor[0] != 1:
-                respuesta['correcto'] = False
+                respuesta['correcto'] = 'False'
             else:
-                respuesta['correcto'] = True
+                respuesta['correcto'] = 'True'
             respuesta['inputTagname'] = 'q_answer' + str(i)
+            print(respuesta)
             pregunta['respuestas'].append(respuesta)
         preguntas.append(pregunta)
     context['preguntas'] = preguntas
@@ -45,4 +46,17 @@ def menu(request):
 
 def resultados(request):
     if request.method == 'POST':
-        return render(request, 'resultados.html',{})
+        context = {}
+        nombre = 'Nico'
+        aciertos = 0
+        porcentaje = 0
+        respuestas = [request.POST.get('q_answer1'), request.POST.get('q_answer2'),
+            request.POST.get('q_answer3'), request.POST.get('q_answer4')]
+        for respuesta in respuestas:
+            if respuesta == 'True':
+                aciertos += 1
+        porcentaje = aciertos * 25
+        context['participante'] =  nombre
+        context['aciertos'] = aciertos
+        context['porcentaje'] = porcentaje
+        return render(request, 'resultados.html', context)
