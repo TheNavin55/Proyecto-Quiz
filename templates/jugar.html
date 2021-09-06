@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static%}
 <html lang="es">
-
 <head>
     <title>C H A C O - 70 AÑOS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +15,9 @@
     <center>
         <ul>
             <section style="padding-top:10px">
-                <a href="https://empleo.chaco.gob.ar/informatorio#/"><img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt=""></a>
+                <a href="https://empleo.chaco.gob.ar/informatorio#/">
+                    <img src="{% static 'img/infoLogo.svg' %}" width="60vw" alt="">
+                </a>
             </section>
             <div style="padding-left: 10px;display:inline-block">
                 <a href="{% url 'menu' %}">Menu</a>
@@ -48,22 +49,22 @@
                         <div class="col-xs-3 5"> </div>
                         <div class="quiz" id="quiz" data-toggle="buttons">
                             {% for respuesta in pregunta.respuestas %}
-                                {% with forloop.parentloop.counter as contador %}
-                                    <label class="element-animation1 btn btn-lg btn-danger btn-block">
-                                        <span class="btn-label">
-                                            <i class="glyphicon glyphicon-chevron-right"></i>
-                                        </span>
-                                        {% if contador == 1%}
-                                            <input type="radio" name="q_answer1" value={{respuesta.correcto}}> {{respuesta.texto}}
-                                        {% elif contador == 2%}
-                                            <input type="radio" name="q_answer2" value={{respuesta.correcto}}> {{respuesta.texto}}
-                                        {% elif contador == 3%}
-                                            <input type="radio" name="q_answer3" value={{respuesta.correcto}}> {{respuesta.texto}}
-                                        {% else %}
-                                            <input type="radio" name="q_answer4" value={{respuesta.correcto}}> {{respuesta.texto}}
-                                        {% endif %}  
-                                    </label>
-                                {% endwith %}
+                            {% with forloop.parentloop.counter as contador %}
+                            <label class="element-animation1 btn btn-lg btn-danger btn-block">
+                                <span class="btn-label">
+                                    <i class="glyphicon glyphicon-chevron-right"></i>
+                                </span>
+                                {% if contador == 1%}
+                                <input type="radio" name="q_answer1" value={{respuesta.correcto}}> {{respuesta.texto}}
+                                {% elif contador == 2%}
+                                <input type="radio" name="q_answer2" value={{respuesta.correcto}}> {{respuesta.texto}}
+                                {% elif contador == 3%}
+                                <input type="radio" name="q_answer3" value={{respuesta.correcto}}> {{respuesta.texto}}
+                                {% else %}
+                                <input type="radio" name="q_answer4" value={{respuesta.correcto}}> {{respuesta.texto}}
+                                {% endif %}  
+                            </label>
+                            {% endwith %}
                             {% endfor %}
                             
                         </div>
@@ -84,5 +85,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </footer>
 </body>
-
 </html>
