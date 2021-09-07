@@ -1,13 +1,9 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from django.db.models.fields import CharField, DateField, EmailField, IntegerField, TextField, TimeField
+from django.conf import settings
 
 # Create your models here.
-class Participante(models.Model):
-    usuario = CharField("Nombre con el que el usuario se identifica en el juego", max_length = 50)
-    contrasena = CharField("Contraseña del usuario", max_length = 15)
-    email = EmailField("Email del usuario para contacto en caso de perdida de contraseña", max_length = 75)
-
 class Pregunta(models.Model):
     descripcion = TextField("Texto que representa la pregunta propiamente dicha")
     categoria = CharField("Categoria a la que pertenece la pregunta", max_length = 25)
@@ -25,7 +21,7 @@ class Juego(models.Model):
     puntaje = IntegerField("Puntaje obtenido por el jugador", default = 0)
 
 class Juega(models.Model):
-    idParticipante = models.ForeignKey(Participante, on_delete = models.CASCADE)
+    idParticipante = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE)
     idJuego = models.ForeignKey(Juego, on_delete = models.CASCADE)
     idPregunta = models.ForeignKey(Pregunta, on_delete = DO_NOTHING)
     correcto = models.BooleanField(default = False)

@@ -1,8 +1,15 @@
-from apps.appPrincipal.models import Pregunta
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth import authenticate, login as logear, logout as salir
+from django.contrib.auth.decorators import login_required
 import random
 
+from .models import Pregunta
+from .forms import NuevoUsuarioForm
+
 # Create your views here.
+
+@login_required(login_url='login')
 def jugar(request):
     context = {}
     listaIds = Pregunta.objects.filter(descripcion__isnull = False).values_list('id', flat = True)
@@ -30,17 +37,63 @@ def jugar(request):
     return render(request, 'jugar.html', context)
 
 def login(request):
-    return render(request, 'login.html',{})
+    if request.user.is_authenticated:
+        return redirect('menu')
+    else:
+        if request.method == 'POST':
+            print('Esto es un post')
+            nombreUsuario = request.POST.get('username')
+            print(nombreUsuario)
+            password = request.POST.get('password')
+            usuario = authenticate(request, username = nombreUsuario, password = password)
+            print('Valiadando usuario...')
+            if usuario is not None:
+                print('Usuario valido')
+                logear(request, usuario)
+                return redirect('menu')
+            else:
+                print('Usuario invalido')
+                messages.info(request, 'Nombre de usuario o contraseña no válido.')
+                return render(request, 'login.html',{})
+        return render(request, 'login.html',{})
+
+#@login_required(login_url='login')
+def logout(request):
+    salir(request)
+    return redirect('login')
+
 
 def create(request):
-    return render(request, 'create.html',{})
+    if request.user.is_authenticated:
+        return redirect('menu')
+    else:
+        if request.method == 'POST':
+            print('esto es un POST')
+            form = NuevoUsuarioForm(request.POST)
+            if form.is_valid():
+                print('Nuevo usuario valido. Guardando...')
+                form.save()
+                #usuario = form.cleaned_data.get('username')
+                #mensajes.success(request, 'La cuenta ' + usuario + ' fue creada exitosamente.')
+                print('redirigiendo a login...')
+                return redirect('login')
+            else:
+                messages.info(request, 'Nombre de usuario o contraseña no válido.')
+                print(form.errors)
+        form = NuevoUsuarioForm()
+        context = {}
+        context['form'] = form
+        return render(request, 'create.html', context)
 
+@login_required(login_url='login')
 def nosotros(request):
     return render(request, 'nosotros.html',{})
 
+@login_required(login_url='login')
 def menu(request):
     return render(request, 'menu.html',{})
 
+@login_required(login_url='login')
 def resultados(request):
     if request.method == 'POST':
         context = {}

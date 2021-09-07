@@ -20,6 +20,7 @@ from apps.appPrincipal import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.login, name="login"),
+    path('logout/', views.logout, name="logout"),
     path('jugar/', views.jugar, name="jugar"),
     path('create/', views.create, name="create"),
     path('menu/', views.menu, name="menu"),
