@@ -12,8 +12,7 @@ h1{
 	padding-top: 2vh;
 	text-align: center;
 	font-size: 5rem;
-	padding-bottom: 30vw;
-	padding-bottom: 30vh;
+	padding-bottom: 25vw;
 }
 body{
 	background-color: #C1CFC0;
@@ -34,7 +33,7 @@ h2{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: 0px 0px 90px 10px blue ;
+	box-shadow: 0px 0px 90px 10px royalblue ;
 }
 .nav_btn{
 	padding: 10px;
@@ -43,7 +42,7 @@ h2{
 	color: black;
 }
 .nav_btn:hover{
-	color: blue;
-	text-shadow: 0px 0px 20px blue
+	color: royalblue;
+	text-shadow: 0px 0px 20px royalblue
 	
 }

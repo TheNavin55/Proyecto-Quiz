@@ -29,7 +29,7 @@
                 <a href="{% url 'nosotros' %}">Nosotros</a>
             </div>
             <div style="padding-left: 10px;display:inline-block">
-                <a href="{% url 'login' %}">Cerrar sesión</a>
+                <a href="{% url 'logout' %}">Cerrar sesión</a>
             </div>
         </ul>
     </center>
@@ -50,8 +50,8 @@
                         <div class="quiz" id="quiz" data-toggle="buttons">
                             {% for respuesta in pregunta.respuestas %}
                             {% with forloop.parentloop.counter as contador %}
-                            <label class="element-animation1 btn btn-lg btn-danger btn-block">
-                                <span class="btn-label">
+                            <label class="element-animation1 btn btn-lg btn-danger btn-block" style="background-color:royalblue; border-color: royalblue;">
+                                <span class="btn-label" style="background-color:#297F87">
                                     <i class="glyphicon glyphicon-chevron-right"></i>
                                 </span>
                                 {% if contador == 1%}
@@ -74,8 +74,8 @@
         </div>
         {% endfor %}
         <center>
-            <div class="btn btn-primary" >
-                <input type="submit" value="Terminar">
+            <div class="btn btn-primary" style="margin-bottom:20px">
+                <input style="background-color:transparent; border:none;" type="submit" value="Terminar">
             </div>
         </center>
     </form>

@@ -28,7 +28,7 @@
                     <a href="{% url 'nosotros' %}">Nosotros</a>
                 </div>
                 <div style="padding-left: 10px;display:inline-block">
-                    <a href="{% url 'login' %}">Cerrar sesión</a>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
                 </div>
             </ul>
         </center>
@@ -42,7 +42,7 @@
             
         <section class="box">
             <div class="box_name">
-                <h2>Nombre del participante: {{ participante }}</h2>
+                <h2>Nombre del participante: {{ request.user }}</h2>
             </div>
             <div>
                 <h2>
