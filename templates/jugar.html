@@ -45,6 +45,15 @@
                     <div class="modal-header">
                         <h3>{{pregunta.descripcion}}</h3>
                     </div>
+                    {% if forloop.counter == 1 %}
+                        <input type="hidden" name="id1" value={{pregunta.id}}>
+                    {% elif forloop.counter == 2 %}
+                        <input type="hidden" name="id2" value={{pregunta.id}}>
+                    {% elif forloop.counter == 3 %}
+                        <input type="hidden" name="id3" value={{pregunta.id}}>
+                    {% else %}
+                        <input type="hidden" name="id4" value={{pregunta.id}}>
+                    {% endif %}
                     <div class="modal-body">
                         <div class="col-xs-3 5"> </div>
                         <div class="quiz" id="quiz" data-toggle="buttons">
@@ -66,7 +75,6 @@
                             </label>
                             {% endwith %}
                             {% endfor %}
-                            
                         </div>
                     </div>
                 </div>
