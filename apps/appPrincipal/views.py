@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login as logear, logout as salir
+from django.contrib.auth import authenticate, get_user_model, login as logear, logout as salir
 from django.contrib.auth.decorators import login_required
 import random
 
-from .models import Pregunta
+from .models import Pregunta, Juego, Juega
 from .forms import NuevoUsuarioForm
 
 # Create your views here.
@@ -18,6 +18,7 @@ def jugar(request):
     preguntas = []
     for item in preguntasRandom:
         pregunta = {}
+        pregunta['id'] = item['id']
         pregunta['descripcion'] = item['descripcion']
         pregunta['categoria'] = item['categoria']
         pregunta['respuestas'] = []
@@ -35,6 +36,50 @@ def jugar(request):
         preguntas.append(pregunta)
     context['preguntas'] = preguntas
     return render(request, 'jugar.html', context)
+
+@login_required(login_url='login')
+def resultados(request):
+    if request.method == 'POST':
+        print('esto es un POST')
+        context = {}
+        usuario = get_user_model()
+        nombre = request.user
+        aciertos = 0
+        porcentaje = 0
+        respuestas = [request.POST.get('q_answer1'), request.POST.get('q_answer2'),
+            request.POST.get('q_answer3'), request.POST.get('q_answer4')]
+        idPreguntas = [
+            request.POST.get('id1'), request.POST.get('id2'),
+            request.POST.get('id3'), request.POST.get('id4')
+        ]
+        print(idPreguntas)
+        preguntas = list(Pregunta.objects.filter(id__in = idPreguntas))
+        for respuesta in respuestas:
+            if respuesta == 'True':
+                aciertos += 1
+        porcentaje = aciertos * 25
+        juegoActual = Juego(
+            puntaje = porcentaje
+        )
+        juegoActual.save()
+        print('guardando objectos juega...')
+        i = 0
+        print(preguntas)
+        for pregunta in preguntas:
+            print('guardando usuario ' + str(i))
+            Juega.objects.create(
+                idParticipante = usuario,
+                idJuego = juegoActual,
+                idPregunta = pregunta,
+                correcto = bool(respuestas[i])
+            )
+            print('deberia haberse creado un objecto')
+            i += 1
+        print('estoy despues del for')
+        context['participante'] =  nombre
+        context['aciertos'] = aciertos
+        context['porcentaje'] = porcentaje
+        return render(request, 'resultados.html', context)
 
 def login(request):
     if request.user.is_authenticated:
@@ -92,21 +137,3 @@ def nosotros(request):
 @login_required(login_url='login')
 def menu(request):
     return render(request, 'menu.html',{})
-
-@login_required(login_url='login')
-def resultados(request):
-    if request.method == 'POST':
-        context = {}
-        nombre = 'Nico'
-        aciertos = 0
-        porcentaje = 0
-        respuestas = [request.POST.get('q_answer1'), request.POST.get('q_answer2'),
-            request.POST.get('q_answer3'), request.POST.get('q_answer4')]
-        for respuesta in respuestas:
-            if respuesta == 'True':
-                aciertos += 1
-        porcentaje = aciertos * 25
-        context['participante'] =  nombre
-        context['aciertos'] = aciertos
-        context['porcentaje'] = porcentaje
-        return render(request, 'resultados.html', context)
