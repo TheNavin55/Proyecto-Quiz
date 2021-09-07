@@ -120,7 +120,8 @@ def create(request):
             else:
                 messages.info(request, 'Nombre de usuario o contraseña no válido.')
                 print(form.errors)
-        form = NuevoUsuarioForm()
+        else:
+            form = NuevoUsuarioForm()
         context = {}
         context['form'] = form
         return render(request, 'create.html', context)
