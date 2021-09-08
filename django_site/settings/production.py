@@ -1,7 +1,7 @@
 # production.py
 from .base import *
 DEBUG = False
-ALLOWED_HOSTS = ['myportfolio.com']
+ALLOWED_HOSTS = ['informatorio-grupo-1-2021.herokuapp.com/', '127.0.0.1/']
 
 DATABASES = {
     'default': {
@@ -10,5 +10,5 @@ DATABASES = {
     }
 }
 
-STATIC_URL = 'https://nombreurlproyecto.com/static/'
-MEDIA_URL = 'https://nombreurlproyecto.com/media/'
+STATIC_URL = 'https://informatorio-grupo-1-2021.herokuapp.com/'
+MEDIA_URL = 'https://informatorio-grupo-1-2021.herokuapp.com//'
