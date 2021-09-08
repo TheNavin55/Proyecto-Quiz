@@ -17,9 +17,11 @@
         <div class="text-1"></div>
         <div class="text-2"></div>
         <div class="text-3"></div>
-        <form action="">
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
             <div class="text-center pt-3">
-                <p class="display-7 fw-bold">INICIAR SESION<span class="ps-1"></span></p> <small class="d-flex align-items-center justify-content-center mb-3">
+                <p class="display-7 fw-bold">INICIAR SESION<span class="ps-1"></span></p>
+                <small class="d-flex align-items-center justify-content-center mb-3">
                     <p>No tienes una cuenta?</p>
                     <a href ="{% url 'create' %}"><div class="btn btn-primary">Registrarse</div></a>
                 </small>
@@ -27,16 +29,17 @@
             <div class="row px-md-4 px-1 m-0">
                 <div class="col-12">
                     <div>
-                        <p class="pb-1 username">Usuario</p> <input type="text" class=" name form-control mb-4" value="" placeholder="Nombre de usuario">
+                        <!--<p class="pb-1 username">Usuario</p> -->
+                        <input type="text" name="username" placeholder="Nombre de usuario" class=" name form-control mb-4">
                     </div>
                 </div>
-                
-                <div class="col-12"> <input type="password" class="form-control mb-4" name="password" id="pass" placeholder="Password"> </div>
+                <div class="col-12"> <input type="password" name="password" placeholder="Password" class="form-control mb-4" id="pass"> </div>
                 <div class="col-12 create">
-                    <div class="btn btn-primary py-3 ">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <p class="">Logearse</p> <span class="fas fa-arrow-right "></span>
-                        </div>
+                    {% for mensaje in messages %}
+                        <p>{{ mensaje }}</p>
+                    {% endfor %}
+                    <div class="btn btn-primary py-3" style="padding: 0%;">
+                        <input style="background-color:transparent; border:none; padding:2% 35%; font-size:1.6rem ; " type="submit" name="Logearse " placeholder="Ingresar"><span class="fas fa-arrow-right "></span>
                     </div>
                 </div>
             </div>

@@ -13,10 +13,10 @@
 	</head>
 	<body id="body">
 		<header><h1>Quiz 70 Aniversario Chaco</h1></header>
+		<h2 style="text-align:center">Hola, {{ request.user }}</h2>
 		<main>
 			<article>
 				<div class="nav">
-
 					<a href="{% url 'nosotros' %}">
 						<div class="nav_btn">
 							<center>
@@ -39,7 +39,7 @@
 						</div>
 					</a>
 
-					<a href="{% url 'login' %}">
+					<a href="{% url 'logout' %}">
 						<div class="nav_btn">
 							<center>
 								<figure>

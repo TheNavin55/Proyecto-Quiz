@@ -23,7 +23,7 @@ body {
 .card {
     border-radius: 20px;
     background: #eeeeee;
-    box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #C1CFC0;
+    box-shadow:0px 0px 15px royalblue;
     border: none;
 }
 

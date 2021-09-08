@@ -9,6 +9,7 @@
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="{% static 'img/chaco.png' %}">
         <link rel="stylesheet" href="{% static 'css/styles_resultados.css' %}">
+        <link rel="canonical" href="/web/tweet-button">
     </head>
 
     <header>
@@ -27,7 +28,7 @@
                     <a href="{% url 'nosotros' %}">Nosotros</a>
                 </div>
                 <div style="padding-left: 10px;display:inline-block">
-                    <a href="{% url 'login' %}">Cerrar sesión</a>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
                 </div>
             </ul>
         </center>
@@ -41,23 +42,25 @@
             
         <section class="box">
             <div class="box_name">
-                <h2>Nombre del participante</h2>
+                <h2>Nombre del participante: {{ request.user }}</h2>
             </div>
             <div>
                 <h2>
-                    Respuestas correctas: 0
+                    Respuestas correctas: {{aciertos}} de 4
                 </h2>
                 <h2>
-                    Preguntas totales: 4
-                </h2>
-                <h2>
-                    Porcentaje de ascierto: 0%
+                    Porcentaje de ascierto: {{porcentaje}}%
                 </h2>
             </div>
         </section>
         <section>
+            
+            
             <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
             <div id="fb-root"></div>
+            
+            <div><a class="twitter-share-button" href="https://twitter.com/intent/tweet"> Compartir en Twitter</a></div>
+
         </section>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v11.0" nonce="ko1Xrcr2"></script>
     </body>
