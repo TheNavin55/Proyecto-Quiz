@@ -1,5 +1,4 @@
-'''
-from .base import *
+'''from .base import *
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -14,5 +13,4 @@ DATABASES = {
         'PORT':'3306',
 
     }
-}
-'''
+}'''
